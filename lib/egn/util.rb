@@ -18,7 +18,11 @@ module Egn
         year = "18#{year}"
       when (41..52)
         month -= 40
-        year = "20#{year}"
+        if year.to_s.length == 1
+          year = "200#{year}"
+        else
+          year = "20#{year}"
+        end   
       end
 
       [year.to_i, month]
